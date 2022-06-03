@@ -1,0 +1,31 @@
+function [num, den] = butter2(n, Wn)
+
+fs = 2;
+u = 2*fs*tan(pi*Wn/fs);
+Wn = u;
+[z,p,k] = buttap(n);
+[a,b,c,d] = zp2ss(z,p,k);
+[a,b,c,d] = lp2lp(a,b,c,d,Wn);
+
+[a,b,c,d] = bilinear(a,b,c,d,fs);
+
+a%,b,c,d
+
+
+den = poly2(a)
+
+num = buttnum2(n,Wn,den);
+
+
+%---------------------------------
+function b = buttnum2(n,Wn,den)
+
+    Wn = 2*atan2(Wn,4)
+    r = -ones(n,1)
+    w = 0;
+    b = poly(r)
+    % now normalize so |H(w)| == 1:
+    kern = exp(-j*w*(0:length(b)-1))
+kern*den(:)
+sum(den)
+    b = real(b*(kern*den(:))/(kern*b(:)))
