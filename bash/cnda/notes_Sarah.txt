@@ -1,0 +1,9 @@
+https://cnda.wustl.edu/data/services/tokens/issue
+
+{"xdatUserId":"mcavoy","alias":"0a0cdf64-1c30-4d34-8adc-7172de27e19b","secret":"snf3Csnmp1o0xOqvyMAQBAx4ertKiNyh57tZZLv7eLnstiGcy5wHpQOawSayeluH","singleUse":false,"estimatedExpirationTime":1581283872831,"id":2484496,"created":1580938272831,"disabled":0,"timestamp":1580938272831,"enabled":true}
+
+{"xdatUserId":"mcavoy","alias":"0ae4d6e6-46cb-4208-acd5-ca22f90f2515","secret":"jsB4ad40b4yCyXDwgjacjKfGeN5kNVE41HsryM48HDXnzj64YlmxwTZn8aQKmLhX","estimatedExpirationTime":1589221201097,"singleUse":false,"id":2489045,"disabled":0,"created":1588875601098,"timestamp":1588875601098,"enabled":true}
+
+{"xdatUserId":"mcavoy","alias":"46c69ea0-0e95-491d-9123-756341b4dd54","secret":"MGnmxhLHbtrKrsWHYYj70hfmqDNg6MJy58uYCY8uUBKOUmIVjtfDpNOD9UBH0LhN","singleUse":false,"estimatedExpirationTime":1589757043387,"id":2489084,"disabled":0,"created":1589411443387,"enabled":true,"timestamp":1589411443387}
+
+{"xdatUserId":"mcavoy","alias":"65bccfd8-246a-47e6-a652-24edd19453b7","secret":"AlcWSKDmROHuex1kwyAszZw8KEyF9sGNpJWhlBynRzdLQpqZmkxJhFtgKx3NVUb3","singleUse":false,"estimatedExpirationTime":1589833616842,"id":2489097,"created":1589488016848,"disabled":0,"timestamp":1589488016848,"enabled":true}
