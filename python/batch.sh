@@ -410,28 +410,34 @@
 ##o=220217PMRg123mf_and_220217RESg123mf.txt
 ##code/commonSubjects.py -d $d
 
-#for i in ${x[@]};do
-#    d=${i}.dat
-#    t=1.5
-#    p=/data/nil-bluearc/vlassenko/HCP/sub
-#    o=${i}_motion0.txt
-#    code/motionNiftiOrTxt.py -d $d -t $t -p $p -o $o -0
-#done
+#code/educationNiftiOrTxt.py -h
 
-#code/educationRaceTxt.py -h
+#c=2018_11_30_Regression_copy.csv
+#m=ASRC_non-ADRC_MTIs_all_visits_04_23_2020_mm220216.csv
+#r=VGLabAgingDementia-Educationrace_DATA_2022-06-13_1649_edit.csv
+#x=220217PMRg123mf.dat
+#o=${x%.*}.nii.gz
+#code/educationNiftiOrTxt.py -c $c -m $m -r $r -d $x -o $o
+#/home/usr/mcavoy/FIDL/build/fidl_hdr -files $o -val
+
+#r=VGLabAgingDementia-Educationrace_DATA_2022-06-13_1649_edit.csv
+#x=220217RESg123mf.dat
+#o=${x%.*}.nii.gz
+#code/educationNiftiOrTxt.py -r $r -d $x -o $o
+#/home/usr/mcavoy/FIDL/build/fidl_hdr -files $o -val
 
 #c=2018_11_30_Regression_copy.csv
 #m=ASRC_non-ADRC_MTIs_all_visits_04_23_2020_mm220216.csv
 #r=VGLabAgingDementia-Educationrace_DATA_2022-06-13_1649_edit.csv
 #x=(220217PMR1mf.dat 220217PMR2mf.dat 220217PMR3mf.dat)
 #for i in ${x[@]};do
-#    code/educationRaceTxt.py -c $c -m $m -r $r -d $i
+#    code/educationNiftiOrTxt.py -c $c -m $m -r $r -d $i
 #    echo ''
 #done
 
 #r=VGLabAgingDementia-Educationrace_DATA_2022-06-13_1649_edit.csv
 #x=(220217RES1mf.dat 220217RES2mf.dat 220217RES3mf.dat)
 #for i in ${x[@]};do
-#    code/educationRaceTxt.py -r $r -d $i
+#    code/educationNiftiOrTxt.py -r $r -d $i
 #    echo ''
 #done
