@@ -416,13 +416,13 @@
 #m=ASRC_non-ADRC_MTIs_all_visits_04_23_2020_mm220216.csv
 #r=VGLabAgingDementia-Educationrace_DATA_2022-06-13_1649_edit.csv
 #x=220217PMRg123mf.dat
-#o=${x%.*}.nii.gz
+#o=${x%.*}_educ.nii.gz
 #code/educationNiftiOrTxt.py -c $c -m $m -r $r -d $x -o $o
 #/home/usr/mcavoy/FIDL/build/fidl_hdr -files $o -val
 
 #r=VGLabAgingDementia-Educationrace_DATA_2022-06-13_1649_edit.csv
 #x=220217RESg123mf.dat
-#o=${x%.*}.nii.gz
+#o=${x%.*}_educ.nii.gz
 #code/educationNiftiOrTxt.py -r $r -d $x -o $o
 #/home/usr/mcavoy/FIDL/build/fidl_hdr -files $o -val
 
@@ -434,6 +434,17 @@
 #    code/educationNiftiOrTxt.py -c $c -m $m -r $r -d $i
 #    echo ''
 #done
+#x=(220217PMR1mf_educ.txt 220217PMR2mf_educ.txt 220217PMR3mf_educ.txt)
+#for((i=0;i<${#x[@]};++i));do
+#    echo educ$((i+1)) | cat - ${x[i]} > ${x[i]}_tmp && mv ${x[i]}_tmp ${x[i]} 
+#done
+#/home/usr/mcavoy/FIDL/build/fidl_block -age ${x[@]} -out 220217PMRg123mf_educ.ext 
+#f="220217PMRg123mf_groupAgeSexcov.ext 220217PMRg123mf_educ.ext"
+#o=220217PMRg123mf_groupAgeSexcovEduc.ext
+#code/catFilesHorz.py -f $f -o $o
+#f="220217PMRg123mf_groupAgeSexcovMotion.ext 220217PMRg123mf_educ.ext"
+#o=220217PMRg123mf_groupAgeSexcovMotionEduc.ext
+#code/catFilesHorz.py -f $f -o $o
 
 #r=VGLabAgingDementia-Educationrace_DATA_2022-06-13_1649_edit.csv
 #x=(220217RES1mf.dat 220217RES2mf.dat 220217RES3mf.dat)
@@ -441,3 +452,44 @@
 #    code/educationNiftiOrTxt.py -r $r -d $i
 #    echo ''
 #done
+#x=(220217RES1mf_educ.txt 220217RES2mf_educ.txt 220217RES3mf_educ.txt)
+#for((i=0;i<${#x[@]};++i));do
+#    echo educ$((i+1)) | cat - ${x[i]} > ${x[i]}_tmp && mv ${x[i]}_tmp ${x[i]}   
+#done
+#/home/usr/mcavoy/FIDL/build/fidl_block -age ${x[@]} -out 220217RESg123mf_educ.ext
+#f="220217RESg123mf_groupAgeSexcov.ext 220217RESg123mf_educ.ext"
+#o=220217RESg123mf_groupAgeSexcovEduc.ext
+#code/catFilesHorz.py -f $f -o $o
+#f="220217RESg123mf_groupAgeSexcovMotion.ext 220217RESg123mf_educ.ext"
+#o=220217RESg123mf_groupAgeSexcovMotionEduc.ext
+#code/catFilesHorz.py -f $f -o $o
+
+#r=VGLabAgingDementia-Educationrace_DATA_2022-06-13_1649_edit.csv
+#x=(210812RES1_PETmf.dat 210812RES2edit_PETmf.dat 210812RES3_PETmf.dat)
+#for i in ${x[@]};do
+#    code/educationNiftiOrTxt.py -r $r -d $i
+#    echo ''
+#done
+#x=(210812RES1_PETmf_educ.txt 210812RES2edit_PETmf_educ.txt 210812RES3_PETmf_educ.txt)
+#for((i=0;i<${#x[@]};++i));do
+#    echo educ$((i+1)) | cat - ${x[i]} > ${x[i]}_tmp && mv ${x[i]}_tmp ${x[i]}   
+#done
+#/home/usr/mcavoy/FIDL/build/fidl_block -age ${x[@]} -out 210812RESedit_PETg123mf_educ.ext 
+#f="210812RESedit_PETmfg123_ageSexcov.ext 210812RESedit_PETg123mf_educ.ext"
+#o=210812RESedit_PETg123mf_groupAgeSexcovEduc.ext
+#code/catFilesHorz.py -f $f -o $o
+
+#c=2018_11_30_Regression_copy.csv
+#m=ASRC_non-ADRC_MTIs_all_visits_04_23_2020_mm220216.csv
+#r=VGLabAgingDementia-Educationrace_DATA_2022-06-13_1649_edit.csv
+#x=(220217PMR1mf.dat 220217PMR2mf.dat 220217PMR3mf.dat)
+#for i in ${x[@]};do
+#    code/raceTxt.py -c $c -m $m -r $r -d $i
+#    echo ''
+#done
+r=VGLabAgingDementia-Educationrace_DATA_2022-06-13_1649_edit.csv
+x=(220217RES1mf.dat 220217RES2mf.dat 220217RES3mf.dat)
+for i in ${x[@]};do
+    code/raceTxt.py -r $r -d $i
+    echo ''
+done
