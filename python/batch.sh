@@ -487,9 +487,9 @@
 #    code/raceTxt.py -c $c -m $m -r $r -d $i
 #    echo ''
 #done
-r=VGLabAgingDementia-Educationrace_DATA_2022-06-13_1649_edit.csv
-x=(220217RES1mf.dat 220217RES2mf.dat 220217RES3mf.dat)
-for i in ${x[@]};do
-    code/raceTxt.py -r $r -d $i
-    echo ''
-done
+#r=VGLabAgingDementia-Educationrace_DATA_2022-06-13_1649_edit.csv
+#x=(220217RES1mf.dat 220217RES2mf.dat 220217RES3mf.dat)
+#for i in ${x[@]};do
+#    code/raceTxt.py -r $r -d $i
+#    echo ''
+#done
