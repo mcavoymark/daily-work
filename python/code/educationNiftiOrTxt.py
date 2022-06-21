@@ -8,7 +8,7 @@ parser=argparse.ArgumentParser(description=text,formatter_class=argparse.RawText
 parser.add_argument('-c','--csvER',help='Education is read from this csv. Subjects are identified by MAP#. Ex. 2018_11_30_Regression_copy.csv from Jon Christensen.')
 parser.add_argument('-m','--csvMAP',help='MAP# is read from this csv if 108XXX in *.dat. Ex. ASRC_non-ADRC_MTIs_all_visits_04_23_2020_mm220216.csv')
 parser.add_argument('-r','--csvREDCAP',help='Education is read from this csv if not found in --csvER. Ex. VGLabAgingDementia-Educationrace_DATA_2022-06-13_1649_edit.csv')
-parser.add_argument('-d','--dat',help='Input dat. Ex. 220217PMR1mf.dat. Output will be 220217PMR1mf_educ.txt and 20217PMR1mf_race.txt')
+parser.add_argument('-d','--dat',help='Input dat. Ex. 220217PMR1mf.dat')
 parser.add_argument('-0','--zeromean',help='Education is zero mean',action="store_true")
 parser.add_argument('-o','--out',help='Output. Optional. Default is text. Ex. 220217RESg123mf_educ.nii.gz or 220217RESg123mf_educ.nii, output will be nifti. Anything else will be text.')
 args=parser.parse_args()
@@ -149,8 +149,11 @@ print(educ)
 
 c0=''
 educ=np.array(educ,dtype=np.single)
+me0=np.mean(educ)
+min0=min(educ)
+max0=max(educ)
 if args.zeromean:
-    educ=educ-np.mean(educ)
+    educ=educ-me0
     c0='0'
 idx=-1
 if args.out:idx=args.out.rfind('.nii')
@@ -165,6 +168,5 @@ else:
         out=args.out
     else:
         out=args.dat[:-4]+'_educ'+c0+'.txt'
-    with open(out,mode='wt',encoding='utf-8') as fileOutput:
-        np.savetxt(out,educ,fmt='%.1f')
-print(f'Output written to {out}')
+    np.savetxt(out,educ,fmt='%.1f')
+print(f'Output written to {out}\n    {me0:.1f} {min0}-{max0}')
