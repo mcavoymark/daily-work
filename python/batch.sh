@@ -406,10 +406,6 @@
 #    code/catFilesHorz.py -f $f -o $o
 #done
 
-##d='220217PMRg123mf.dat 220217RESg123mf.dat'
-##o=220217PMRg123mf_and_220217RESg123mf.txt
-##code/commonSubjects.py -d $d
-
 #code/educationNiftiOrTxt.py -h
 
 #c=2018_11_30_Regression_copy.csv
@@ -493,3 +489,7 @@
 #    code/raceTxt.py -r $r -d $i
 #    echo ''
 #done
+
+d='220217PMRg123mf.dat 220217RESg123mf.dat'
+o=220217PMRg123mf_and_220217RESg123mf.txt
+code/commonSubjects.py -d $d -o $o
