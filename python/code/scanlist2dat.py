@@ -80,16 +80,21 @@ for i in args.sub:
     print(f'here2 p0={p0}')
 
     d0['SUBNAME']=subname
-    d0['OUTDIR']=str(p0)
+    d0['OUTDIR']=str(p0)+'/pipeline'
 
     for j in range(len(i)):
         with open(i[j],encoding="utf8",errors='ignore') as f1:
             csv1=csv.DictReader(f1)
             for row in csv1:
+
+                #START220805
+                if row['Scan'].casefold()=='none'.casefold():continue
+
                 for k in d0:
                     if k==row['nii']:
                         d0[k]=str(p0)+'/nifti/'+k+'.nii.gz'
                         break
+
 
     if args.out is None:
         with open(n0,mode='wt',encoding="utf8") as f0:
